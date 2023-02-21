@@ -1,0 +1,342 @@
+@import "settings/rem.scss";
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+a:not([class]):hover {
+  color: #2ea8df;
+}
+
+a[class] {
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a,
+label,
+button,
+input,
+a *,
+button *,
+input * {
+  transition: all 0.3s;
+}
+
+:focus {
+  outline: none;
+}
+
+:root {
+  /* Colors */
+  --main-color: #000;
+
+  /* Typography - Main */
+  --main-font: "Inter", sans-serif;
+  --main-font-color: #000;
+  --main-font-size: 1.6rem;
+  --main-font-weight: 400;
+  --main-line-height: 136%;
+
+  --header-height: 6rem;
+
+  --container-max-width: 120.5rem;
+
+  @media screen and (max-width: 767px) {
+    --main-font-size: 1.4rem;
+
+    --header-height: 4rem;
+  }
+}
+
+/* Body */
+body {
+  font-family: var(--main-font);
+  color: var(--main-font-color);
+  font-weight: var(--main-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 600;
+  line-height: 115%;
+}
+
+h1,
+.h1 {
+  font-size: 5.8rem;
+
+  @media screen and (max-width: 767px) {
+    font-size: 3.5rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 5rem;
+
+  @media screen and (max-width: 767px) {
+    font-size: 3.6rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 2.8rem;
+
+  @media screen and (max-width: 767px) {
+    font-size: 2.5rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 2.4rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.6rem;
+}
+
+h6,
+.h6 {
+  font-size: 1.6rem;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+/* Section */
+.section {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    overflow: hidden;
+  }
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  z-index: 15;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 1.6rem;
+  }
+}
+
+/* Row */
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Columns */
+.col {
+  position: relative;
+  min-height: 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-100 {
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+
+    & + & {
+      margin-top: 4rem;
+    }
+  }
+}
+
+/* Button Reset */
+.btn-reset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: 0 0;
+  cursor: pointer;
+}
+
+/* Section Wrap */
+.section-wrap {
+  position: relative;
+}
+
+@import "buttons.scss";
+
+/* Subtitle */
+.section-subtitle {
+  padding-bottom: 0.6rem;
+
+  &,
+  & * {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 136%;
+    color: #737373;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 0.9rem;
+
+    &,
+    & * {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 1.8rem;
+
+  &--col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--col-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &-item {
+    &-2 {
+      grid-column-end: span 2;
+    }
+  }
+
+  &--brand-gap {
+    gap: 16rem;
+    row-gap: 4.8rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    row-gap: 2rem;
+
+    &--gap-4 {
+      gap: 2rem;
+    }
+
+    &--col-2 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &--col-3 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &--col-4 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &-item {
+      &-2 {
+        grid-column-end: span 1;
+      }
+    }
+  }
+}

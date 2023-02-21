@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Указываем box sizing */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+a:not([class]):hover {
+  color: #2ea8df;
+}
+
+a[class] {
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+
+a,
+label,
+button,
+input,
+a *,
+button *,
+input * {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+:focus {
+  outline: none;
+}
+
+:root {
+  /* Colors */
+  --main-color: #000;
+  /* Typography - Main */
+  --main-font: "Inter", sans-serif;
+  --main-font-color: #000;
+  --main-font-size: 1.6rem;
+  --main-font-weight: 400;
+  --main-line-height: 136%;
+  --header-height: 6rem;
+  --container-max-width: 120.5rem;
+}
+
+/* Body */
+
+body {
+  font-family: var(--main-font);
+  color: var(--main-font-color);
+  font-weight: var(--main-font-weight);
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 600;
+  line-height: 115%;
+}
+
+h1,
+.h1 {
+  font-size: 5.8rem;
+}
+
+h2,
+.h2 {
+  font-size: 5rem;
+}
+
+h3,
+.h3 {
+  font-size: 2.8rem;
+}
+
+h4,
+.h4 {
+  font-size: 2.4rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.6rem;
+}
+
+h6,
+.h6 {
+  font-size: 1.6rem;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+/* Section */
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+/* Container */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  z-index: 15;
+}
+
+/* Row */
+
+.row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* Columns */
+
+.col {
+  position: relative;
+  min-height: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.col-100 {
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+/* Button Reset */
+
+.btn-reset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: 0 0;
+  cursor: pointer;
+}
+
+/* Section Wrap */
+
+.section-wrap {
+  position: relative;
+}
+
+/* Button Wrap */
+
+.btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn-wrap > * + * {
+  margin-left: 2rem;
+}
+
+.btn-wrap--center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* Button */
+
+.btn {
+  position: relative;
+  line-height: 1;
+  padding: 0 3rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  background: #000000;
+  border: none;
+  height: 3.8rem;
+  border-radius: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn--white {
+  background: #fff;
+  color: #000;
+}
+
+/* Subtitle */
+
+.section-subtitle {
+  padding-bottom: 0.6rem;
+}
+
+.section-subtitle,
+.section-subtitle * {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 136%;
+  color: #737373;
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.grid--col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item-2 {
+  grid-column-end: span 2;
+}
+
+.grid--brand-gap {
+  gap: 16rem;
+  row-gap: 4.8rem;
+}
+
+@media (min-width: 2500px) {
+  html {
+    font-size: calc(2.5px + 4.8 * (100vw - 768px) / 1152);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: calc(10px + 11 * (100vw - 320px) / 447);
+    font-size: 10px;
+  }
+
+  :root {
+    --main-font-size: 1.4rem;
+    --header-height: 4rem;
+  }
+
+  h1,
+  .h1 {
+    font-size: 3.5rem;
+  }
+
+  h2,
+  .h2 {
+    font-size: 3.6rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: 2.5rem;
+  }
+
+  .section {
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 0 1.6rem;
+  }
+
+  .col-50 {
+    width: 100%;
+  }
+
+  .col-50 + .col-50 {
+    margin-top: 4rem;
+  }
+
+  .btn-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .btn-wrap--center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .btn-wrap > * + * {
+    margin-top: 1.6rem;
+    margin-left: 0;
+  }
+
+  .section-subtitle {
+    padding-bottom: 0.9rem;
+  }
+
+  .section-subtitle,
+  .section-subtitle * {
+    font-size: 1.2rem;
+  }
+
+  .grid {
+    row-gap: 2rem;
+  }
+
+  .grid--gap-4 {
+    gap: 2rem;
+  }
+
+  .grid--col-2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid--col-3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid--col-4 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-item-2 {
+    grid-column-end: span 1;
+  }
+}
+
+@media (max-width: 2499px) and (min-width: 1920px) {
+  html {
+    font-size: calc(2.5px + 7.5 * (100vw - 768px) / 1152);
+  }
+}
+
+@media (max-width: 1919px) and (min-width: 1440px) {
+  html {
+    font-size: calc(5.63px + 7.5 * (100vw - 768px) / 1152);
+  }
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+  html {
+    font-size: calc(3.5px + 7.5 * (100vw - 768px) / 1152);
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  html {
+    font-size: calc(6.8px + 1.5 * (100vw - 768px) / 256);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+         -o-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

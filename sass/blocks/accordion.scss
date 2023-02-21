@@ -1,0 +1,141 @@
+/* FAQ Section */
+.faq-section {
+  background: #f8f8f8;
+  padding-top: 10.8rem;
+  padding-bottom: 8rem;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 4.7rem;
+    padding-bottom: 4.4rem;
+  }
+}
+
+/* Section Container */
+.section-container {
+  flex-wrap: wrap;
+
+  & .section-header {
+    width: 42%;
+    padding-right: 2.7rem;
+  }
+
+  & .section-content {
+    width: 58%;
+  }
+
+  @media screen and (max-width: 767px) {
+    & .section-header {
+      width: 100%;
+      padding-right: 0;
+      padding-bottom: 1.5rem;
+    }
+
+    & .section-content {
+      width: 100%;
+    }
+  }
+}
+
+/* Accordion */
+.accordion {
+  position: relative;
+  border-bottom: 1px solid #eee;
+
+  &__head {
+    width: 100%;
+    position: relative;
+    padding: 2rem 0;
+    font-weight: 600;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 106%;
+    color: #737373;
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    width: calc(100% - 2.4rem);
+    padding-left: 0;
+    padding-right: 2.4rem;
+    transition: all 0.3s;
+  }
+
+  &__head:hover &__text {
+    color: #000;
+  }
+
+  &__plus {
+    position: absolute;
+    right: 0;
+    top: 1.6rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0.2rem;
+      height: 1.4rem;
+      background: #292d32;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 5rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1.4rem;
+      height: 0.2rem;
+      background: #292d32;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 5rem;
+      transition: all 0.3s;
+    }
+  }
+
+  &--open &__plus {
+    transform: rotate(90deg);
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &__content {
+    display: none;
+    padding-bottom: 4rem;
+
+    &,
+    & * {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 136%;
+      color: #000000;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__head {
+      padding: 1.8rem 0;
+      font-size: 1.8rem;
+    }
+
+    &__content {
+      padding-bottom: 2.7rem;
+
+      &,
+      & * {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@import "settings/responsive.scss";
